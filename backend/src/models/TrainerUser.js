@@ -6,7 +6,7 @@ const trainerSchema = new Schema({
   password: String,
 },
 {
-  //add update data controller to mongodb
+  //add update and create date to the Schema 
   timestamps: true
 });
 

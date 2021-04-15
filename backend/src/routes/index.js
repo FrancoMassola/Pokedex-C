@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 const PokemonTrainer = require("../models/TrainerUser");
+const jwt = require('jsonwebtoken');
+const config = require('../data.env');
 
 //all api routes
 router.get("/", (req, res) => res.send(""));
@@ -13,7 +15,9 @@ router.post("/singup", async (req, res) => {
   const newUser = new PokemonTrainer({ username, password });
   //save to database
   await newUser.save();
-  res.send("testing singup");
+  //create token to send -- payload, secret, options 
+  const token = jwt.sign({_id: newUser._id}, config.SECRET_KEY );
+  res.status(200).json({token});
 });
 
 module.exports = router;
