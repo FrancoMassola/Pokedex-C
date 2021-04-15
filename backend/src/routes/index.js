@@ -4,15 +4,15 @@ const PokemonTrainer = require("../models/TrainerUser");
 const jwt = require("jsonwebtoken");
 const config = require("../data.env");
 const authController = require("../controllers/authController");
-const singUpController = require("../controllers/singUpController");
+const singUpController = require("../controllers/signUpController");
 
 //all api routes
 router.get("/", (req, res) => res.send("Home"));
 
 //route to add User on database
-router.post("/singup", singUpController);
+router.post("/signup", singUpController);
 
-router.post("/singin", authController.login);
+router.post("/signin", authController.login);
 
 //route - get private - pokemons data
 router.get("/getPokemons", verifyToken, authController.getTrainerPokemons);
