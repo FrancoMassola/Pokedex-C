@@ -34,4 +34,29 @@ router.post('/singin', async (req,res) =>{
 
 });
 
+//route - get private - pokemons data
+router.get("/getPokemons",verifyToken, (req, res) => {
+    res.send("Correct");
+});
+
 module.exports = router;
+
+//function to verify toquen with headers
+function verifyToken (req,res,next){
+   
+    if(!req.headers.authorization) {
+        return res.status(401).send('Unauthorized Request');
+    }
+    //header authorization -- value Bearer standar
+    //Split the bearer - token and select token
+    const token = req.headers.authorization.split(' ')[1];
+    if(token === null){
+        return res.status(401).send('Unauthorized Request');
+    }
+
+    //get token data
+    const payload = jwt.verify(token, config.SECRET_KEY)
+    //set token payload to request
+    req.trainerId = payload._id;
+    next();
+}
