@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { PokemonslistComponent } from './components/pokemonslist/pokemonslist.component';
+//import guard to protect the sessions
+import {AuthGuard}  from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { PokemonslistComponent } from './components/pokemonslist/pokemonslist.co
     PokemonslistComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

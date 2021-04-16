@@ -20,4 +20,13 @@ export class AuthService {
     return this.http.post<any>(`${this.URL}signin`, user);
   }
 
+  loggedIn(){
+    if(localStorage.getItem('token')){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 }
