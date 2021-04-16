@@ -20,6 +20,7 @@ export class AuthService {
     return this.http.post<any>(`${this.URL}signin`, user);
   }
 
+  //guard controller
   loggedIn(){
     if(localStorage.getItem('token')){
       return true;
@@ -28,5 +29,11 @@ export class AuthService {
       return false;
     }
   }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+
 
 }
