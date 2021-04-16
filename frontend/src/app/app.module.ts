@@ -13,6 +13,8 @@ import { PokemonslistComponent } from './components/pokemonslist/pokemonslist.co
 //import guard to protect the sessions
 import {AuthGuard}  from './auth.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service';
+import { PokecardsComponent } from './components/pokecards/pokecards.component';
+
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import {TokenInterceptorService} from './services/token-interceptor.service';
     SignupComponent,
     SigninComponent,
     PokemonslistComponent,
+    PokecardsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   //add token-interceptor service to all requests

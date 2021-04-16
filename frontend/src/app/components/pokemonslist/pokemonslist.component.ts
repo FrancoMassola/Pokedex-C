@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-pokemonslist',
   templateUrl: './pokemonslist.component.html',

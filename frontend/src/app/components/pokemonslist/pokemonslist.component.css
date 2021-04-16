@@ -9,35 +9,4 @@ div {
     min-height: 62vh;
   }
 
-  div.col-5, div.col-10 {
-      padding: 0;
-  }
-  div.col-5{
-    max-width: 21.666667%;
-  }
-  div.col-10{
-    max-width: 55.333333%;
-  }
   
-  .form {
-    width: 450px;
-  }
-  .btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    border-radius: 35px;
-    font-size: 24px;
-    line-height: 1.33;
-  }
-  .btn-circle {
-    width: 30px;
-    height: 30px;
-    padding: 6px 0px;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.42857;
-    border: solid 1px lightseagreen;
-    margin-left: auto;
-}
