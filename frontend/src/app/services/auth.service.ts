@@ -5,13 +5,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  private URL = 'http://localhost:3000/';
+  private URL = 'http://localhost:3000/api/';
 
   //Generate class instance
   constructor(private http: HttpClient) {}
 
   singUp(user) {
     //return object observable
-    return this.http.post<any>(`${this.URL}/signup`, user);
+    return this.http.post<any>(`${this.URL}signup`, user);
   }
+
+  singIn(user){
+    //return object observable
+    return this.http.post<any>(`${this.URL}signin`, user);
+  }
+
 }
