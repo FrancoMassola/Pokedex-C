@@ -1,20 +1,24 @@
 //require environment variables
-const config = require('./data.env');
+const config = require("./data.env");
 
 //require express module
-const express = require('express');
+const express = require("express");
 
 //run express module
 const app = express();
 
-require ('./database');
+//require cors module - add headers to connect the servers
+const cors = require("cors");
+app.use(cors());
+
+require("./database");
 
 //convert server data to json object
 app.use(express.json());
 
 //set routes to the server
-app.use('/api',require('./routes/index'));
+app.use("/api", require("./routes/index"));
 
-//set port 
+//set port
 app.listen(3000);
-console.log('Server on port', config.PORT);
+console.log("Server on port", config.PORT);
