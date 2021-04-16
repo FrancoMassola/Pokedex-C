@@ -3,13 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-pokecards',
   templateUrl: './pokecards.component.html',
-  styleUrls: ['./pokecards.component.css']
+  styleUrls: ['./pokecards.component.css'],
 })
 export class PokecardsComponent implements OnInit {
+  constructor() {}
+  
+  //init pokemon from form
+  pokemon = {};
 
-  constructor() { }
+  formVisibility = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ShowForm() {
+    this.formVisibility = true;
   }
 
+  HideForm() {
+    this.formVisibility = false;
+  }
 }

@@ -6,10 +6,8 @@
       <!-- <button type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i> -->
 
       <div class="panel panel-default">
-        <!-- /.panel-heading -->
-
         <!-- /.panel-body -->
-        
+        <!-- get all the trainers pokemons from database -->
         <div class="row">
             <div class="col-md-12 col-md-offset-2">
               <div class="card">
@@ -22,13 +20,87 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-12 col-md-offset-2">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5">col-2</div>
+                      <div class="col-10">col-10</div>
+                      <div class="col-5">col-2</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
+      
    
 
-    <button type="button" class="btn btn-default btn-circle">
+    <button (click)="ShowForm()"  type="button" class="btn btn-default btn-circle">
       New
     </button>
+
+  
    
   </div>
+
+  <div [hidden]="!formVisibility">
+    <form >
+        <div class="form-group">
+          <input
+            type="text"
+            
+            name="pokemonName"
+            class="form-control text-center"
+            placeholder="pokemonName"
+            required
+          />
+          <input
+            type="text"
+            
+            name="type"
+            class="form-control text-center"
+            placeholder="type"
+            required
+          />
+          <input
+            type="text"
+            
+            name="level"
+            class="form-control text-center"
+            placeholder="level"
+            required
+          />
+          <input
+            type="text"
+            
+            name="level"
+            class="form-control text-center"
+            placeholder="level"
+            required
+          />
+          <input
+            type="text"
+            
+            name="abilities"
+            class="form-control text-center"
+            placeholder="abilities"
+            required
+          />
+          <input
+            type="text"
+            
+            name="abilities"
+            class="form-control text-center"
+            placeholder="abilities"
+            required
+          />
+        </div>
+        <button (click)="HideForm()"  type="submit" class="btn btn-primary btn-block">
+          add pokemon
+        </button>
+        
+      </form>
+      
+</div>
