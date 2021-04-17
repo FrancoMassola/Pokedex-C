@@ -1,4 +1,4 @@
-<div class="card border" style="width: 18rem; height: 30rem;">
+
     <div class="card-body">
       <h5 class="card-title">Pokedec - Lite</h5>
       <hr style="border: solid 1px; width: 100%;" />
@@ -17,16 +17,17 @@
                     <div class="col-10">{{pokemon.pokemonName}}</div>
                     <div class="col-5">{{pokemon.type}}</div>
                   </div>
-                </div>
+                  
               </div>
+              <a href="" style="border: solid 1px;" routerLinkActive="active" routerLink="/signup">Edit</a>
             </div>
            
       
-      <button (click)="HideForm()" [hidden]="!formVisibility"  type="button" class="btn btn-default btn-circle">
+      <button (click)="HideForm()" [hidden]="!formVisibility"  type="button" class="btn btn-block btn-default btn-circle">
         Close 
       </button>
 
-    <button (click)="ShowForm()"  type="button" class="btn btn-default btn-circle">
+    <button (click)="ShowForm()"  type="button" class="btn btn-default btn-block btn-circle">
       New
     </button>
 
