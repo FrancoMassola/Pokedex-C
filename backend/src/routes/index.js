@@ -15,6 +15,9 @@ router.post("/signup", singUpController);
 
 router.post("/signin", authController);
 
+//route to edit pokemon
+router.put("/edit/:id", pokemonsController.editPokemon);
+
 //route - get private - pokemons data
 router.get("/getPokemons", verifyToken, pokemonsController.getPokemons);
 

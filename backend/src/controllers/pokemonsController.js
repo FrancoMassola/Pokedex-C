@@ -40,8 +40,21 @@ async function getPokemons(req, res) {
   res.send(data);
 }
 
+async function editPokemon(req, res) {
+  const {id} = req.params;
+  const newPokemonData = {
+    pokemonName: req.body.pokemonName,
+    type: req.body.type,
+    level: req.body.level,
+    abilities: req.body.abilities
+  };
+
+  await Pokemon.findByIdAndUpdate(id, {$set: newPokemonData}, {new: true});
+  res.json({status: 'Pokemon update'});
+}
 
 module.exports = {
   createPokemon,
-  getPokemons
+  getPokemons,
+  editPokemon
 }
