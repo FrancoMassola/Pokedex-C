@@ -42,5 +42,3 @@ function verifyToken(req, res, next) {
   console.log(req.trainerId);
   next();
 }
-
-

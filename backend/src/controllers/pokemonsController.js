@@ -35,26 +35,26 @@ async function getPokemons(req, res) {
   req.trainerId = payload._id;
   const trainerId = req.trainerId;
   console.log(trainerId);
-  const data = await Pokemon.find({trainerId: trainerId});
-  //compare the id id trainer and id trainer on pokemons data 
+  const data = await Pokemon.find({ trainerId: trainerId });
+  //compare the id id trainer and id trainer on pokemons data
   res.send(data);
 }
 
 async function editPokemon(req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
   const newPokemonData = {
     pokemonName: req.body.pokemonName,
     type: req.body.type,
     level: req.body.level,
-    abilities: req.body.abilities
+    abilities: req.body.abilities,
   };
 
-  await Pokemon.findByIdAndUpdate(id, {$set: newPokemonData}, {new: true});
-  res.json({status: 'Pokemon update'});
+  await Pokemon.findByIdAndUpdate(id, { $set: newPokemonData }, { new: true });
+  res.json({ status: "Pokemon update" });
 }
 
 module.exports = {
   createPokemon,
   getPokemons,
-  editPokemon
-}
+  editPokemon,
+};
