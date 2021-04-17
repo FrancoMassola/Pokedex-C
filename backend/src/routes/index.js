@@ -8,15 +8,15 @@ const singUpController = require("../controllers/signUpController");
 const pokemonsController = require("../controllers/pokemonsController");
 
 //all api routes
-router.post("/savePokemons", pokemonsController);
+router.post("/savePokemons", pokemonsController.createPokemon);
 
 //route to add User on database
 router.post("/signup", singUpController);
 
-router.post("/signin", authController.login);
+router.post("/signin", authController);
 
 //route - get private - pokemons data
-router.get("/getPokemons", verifyToken, authController.getTrainerPokemons);
+router.get("/getPokemons", verifyToken, pokemonsController.getPokemons);
 
 module.exports = router;
 

@@ -27,4 +27,21 @@ async function createPokemon(req, res) {
   res.status(200).json("Correct Pokemon save");
 }
 
-module.exports = createPokemon;
+async function getPokemons(req, res) {
+  //Split the bearer - token and select token
+  const token = req.headers.authorization.split(" ")[1];
+  const payload = jwt.verify(token, config.SECRET_KEY);
+  //set token payload to request
+  req.trainerId = payload._id;
+  const trainerId = req.trainerId;
+  console.log(trainerId);
+  const data = await Pokemon.find({trainerId: trainerId});
+  //compare the id id trainer and id trainer on pokemons data 
+  res.send(data);
+}
+
+
+module.exports = {
+  createPokemon,
+  getPokemons
+}

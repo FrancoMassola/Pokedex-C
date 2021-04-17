@@ -16,12 +16,6 @@ async function login(req, res) {
   return res.status(200).json({ token });
 }
 
-async function getTrainerPokemons(req, res) {
-  const datas = await PokemonTrainer.find();
-  res.send(datas);
-}
 
-module.exports = {
-  login,
-  getTrainerPokemons,
-};
+module.exports = login;
+
