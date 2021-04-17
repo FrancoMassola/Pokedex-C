@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {PokemonslistComponent} from './components/pokemonslist/pokemonslist.component';
 import {SigninComponent} from './components/signin/signin.component';
 import {SignupComponent} from './components/signup/signup.component';
+import {PokemoneditComponent} from './components/pokemonedit/pokemonedit.component';
 //import guard to protect the sessions
 import{AuthGuard} from './auth.guard';
 
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'edit',
+    component: PokemoneditComponent
   }
 ];
 

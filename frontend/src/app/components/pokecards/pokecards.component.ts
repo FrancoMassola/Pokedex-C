@@ -45,7 +45,9 @@ export class PokecardsComponent implements OnInit {
   savePokemons() {
     this.savepokemonsService.savePokemons(this.pokemon).subscribe(
       (res) => {
-        console.log(res);
+        this.getpokemonsService.getPokemons();
+        alert("Seccessfully Save")
+       
       },
       (err) => console.log(err)
     );

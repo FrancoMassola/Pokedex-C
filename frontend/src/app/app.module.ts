@@ -14,6 +14,8 @@ import { PokemonslistComponent } from './components/pokemonslist/pokemonslist.co
 import {AuthGuard}  from './auth.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { PokecardsComponent } from './components/pokecards/pokecards.component';
+import { PokemoneditComponent } from './components/pokemonedit/pokemonedit.component';
+
 
 
 
@@ -23,7 +25,9 @@ import { PokecardsComponent } from './components/pokecards/pokecards.component';
     SignupComponent,
     SigninComponent,
     PokemonslistComponent,
-    PokecardsComponent
+    PokecardsComponent,
+    PokemoneditComponent,
+    
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   //add token-interceptor service to all requests
