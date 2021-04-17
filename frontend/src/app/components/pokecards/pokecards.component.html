@@ -46,11 +46,11 @@
   </div>
 
   <div [hidden]="!formVisibility">
-    <form >
+    <form (submit) = "savePokemons()">
         <div class="form-group">
           <input
             type="text"
-            
+            [(ngModel)]="pokemon.pokemonName"
             name="pokemonName"
             class="form-control text-center"
             placeholder="pokemonName"
@@ -58,7 +58,7 @@
           />
           <input
             type="text"
-            
+            [(ngModel)]="pokemon.type"
             name="type"
             class="form-control text-center"
             placeholder="type"
@@ -66,7 +66,7 @@
           />
           <input
             type="text"
-            
+            [(ngModel)]="pokemon.level"
             name="level"
             class="form-control text-center"
             placeholder="level"
@@ -74,23 +74,7 @@
           />
           <input
             type="text"
-            
-            name="level"
-            class="form-control text-center"
-            placeholder="level"
-            required
-          />
-          <input
-            type="text"
-            
-            name="abilities"
-            class="form-control text-center"
-            placeholder="abilities"
-            required
-          />
-          <input
-            type="text"
-            
+            [(ngModel)]="pokemon.abilities"
             name="abilities"
             class="form-control text-center"
             placeholder="abilities"

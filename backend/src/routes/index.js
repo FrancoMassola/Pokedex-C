@@ -8,7 +8,7 @@ const singUpController = require("../controllers/signUpController");
 const pokemonsController = require("../controllers/pokemonsController");
 
 //all api routes
-router.post("/getPokemons", pokemonsController);
+router.post("/savePokemons", pokemonsController);
 
 //route to add User on database
 router.post("/signup", singUpController);

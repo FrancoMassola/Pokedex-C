@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SavepokemonsService } from '../../services/savepokemons.service';
 
 @Component({
   selector: 'app-pokecards',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokecards.component.css'],
 })
 export class PokecardsComponent implements OnInit {
-  constructor() {}
-  
-  //init pokemon from form
-  pokemon = {};
+  constructor(private savepokemonsService: SavepokemonsService) {}
+
+  //initialize pokemon
+  pokemon = {
+    pokemonName: '',
+    type: '',
+    level: '',
+    abilities: '',
+  };
 
   formVisibility = false;
 
@@ -21,5 +27,14 @@ export class PokecardsComponent implements OnInit {
 
   HideForm() {
     this.formVisibility = false;
+  }
+
+  savePokemons() {
+    this.savepokemonsService.savePokemons(this.pokemon).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => console.log(err)
+    );
   }
 }
