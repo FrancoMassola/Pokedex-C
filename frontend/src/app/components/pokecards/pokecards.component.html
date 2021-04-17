@@ -1,83 +1,96 @@
+<div class="card-body">
+  <h5 class="card-title">Pokedec - Lite</h5>
+  <hr style="border: solid 1px; width: 100%" />
 
-    <div class="card-body">
-      <h5 class="card-title">Pokedec - Lite</h5>
-      <hr style="border: solid 1px; width: 100%;" />
+  <!-- <button type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i> -->
 
-      <!-- <button type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i> -->
-
-      <div class="panel panel-default">
-        <!-- /.panel-body -->
-        <!-- get all the trainers pokemons from database -->
-        <div class="row">
-            <div class="col-md-12 col-md-offset-2">
-              <div class="card" *ngFor="let pokemon of trainerPokemons">
-                <div class="card-body">
-                  Lvl -name-type
-                  <hr>
-                  <div class="row">
-                   
-                    <div class="col-5">  {{pokemon.level}}</div>
-                    <div class="col-10">{{pokemon.pokemonName}}</div>
-                    <div class="col-5">{{pokemon.type}}</div>
-                  </div>
-                  
-              </div>
-              <a href="" style="border: solid 1px;" routerLinkActive="active" routerLink="/edit">Edit</a>
+  <div class="panel panel-default">
+    <!-- /.panel-body -->
+    <!-- get all the trainers pokemons from database -->
+    <div class="row">
+      <div class="col-md-12 col-md-offset-2">
+        <div class="card" *ngFor="let pokemon of trainerPokemons">
+          <div class="card-body">
+            Lvl-name-type
+            <hr />
+            <div class="row">
+              <div class="col-5">{{ pokemon.level }}</div>
+              <div class="col-10">{{ pokemon.pokemonName }}</div>
+              <div class="col-5">{{ pokemon.type }}</div>
             </div>
-           
-      
-      <button (click)="HideForm()" [hidden]="!formVisibility"  type="button" class="btn btn-block btn-default btn-circle">
-        Close 
-      </button>
-
-    <button (click)="ShowForm()"  type="button" class="btn btn-default btn-block btn-circle">
-      New
-    </button>
-
-  
-   
-  </div>
-
-  <div [hidden]="!formVisibility">
-    <form (submit) = "savePokemons()">
-        <div class="form-group">
-          <input
-            type="text"
-            [(ngModel)]="pokemon.pokemonName"
-            name="pokemonName"
-            class="form-control text-center"
-            placeholder="pokemonName"
-            required
-          />
-          <input
-            type="text"
-            [(ngModel)]="pokemon.type"
-            name="type"
-            class="form-control text-center"
-            placeholder="type"
-            required
-          />
-          <input
-            type="text"
-            [(ngModel)]="pokemon.level"
-            name="level"
-            class="form-control text-center"
-            placeholder="level"
-            required
-          />
-          <input
-            type="text"
-            [(ngModel)]="pokemon.abilities"
-            name="abilities"
-            class="form-control text-center"
-            placeholder="abilities"
-            required
-          />
+          </div>
+          <a
+            href=""
+            style="border: solid 1px"
+            routerLinkActive="active"
+            routerLink="/edit"
+            >Edit</a
+          >
         </div>
-        <button (click)="HideForm()"  type="submit" class="btn btn-primary btn-block">
-          add pokemon
+
+        <button
+          (click)="HideForm()"
+          [hidden]="!formVisibility"
+          type="button"
+          class="btn btn-block btn-default btn-circle"
+        >
+          Close
         </button>
-        
-      </form>
-      
+
+        <button
+          (click)="ShowForm()"
+          type="button"
+          class="btn btn-default btn-block btn-circle"
+        >
+          New
+        </button>
+      </div>
+
+      <div [hidden]="!formVisibility">
+        <form (submit)="savePokemons()">
+          <div class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="pokemon.pokemonName"
+              name="pokemonName"
+              class="form-control text-center"
+              placeholder="pokemonName"
+              required
+            />
+            <input
+              type="text"
+              [(ngModel)]="pokemon.type"
+              name="type"
+              class="form-control text-center"
+              placeholder="type"
+              required
+            />
+            <input
+              type="text"
+              [(ngModel)]="pokemon.level"
+              name="level"
+              class="form-control text-center"
+              placeholder="level"
+              required
+            />
+            <input
+              type="text"
+              [(ngModel)]="pokemon.abilities"
+              name="abilities"
+              class="form-control text-center"
+              placeholder="abilities"
+              required
+            />
+          </div>
+          <button
+            (click)="HideForm()"
+            type="submit"
+            class="btn btn-primary btn-block"
+          >
+            add pokemon
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -16,30 +16,26 @@ export class AuthService {
     return this.http.post<any>(`${this.URL}signup`, user);
   }
 
-  singIn(user){
+  singIn(user) {
     //return object observable
     return this.http.post<any>(`${this.URL}signin`, user);
   }
 
   //guard controller
-  loggedIn(){
-    if(localStorage.getItem('token')){
+  loggedIn() {
+    if (localStorage.getItem('token')) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('token');
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/signin']);
   }
-
-
-
 }

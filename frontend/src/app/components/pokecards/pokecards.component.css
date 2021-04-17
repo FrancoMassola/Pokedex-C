@@ -1,15 +1,16 @@
-div{
-    text-align: center;
-    width: 310px;
+div {
+  text-align: center;
+  width: 310px;
 }
 
-div.col-5, div.col-10 {
-    padding: 0;
+div.col-5,
+div.col-10 {
+  padding: 0;
 }
-div.col-5{
+div.col-5 {
   max-width: 21.666667%;
 }
-div.col-10{
+div.col-10 {
   max-width: 55.333333%;
 }
 
@@ -25,7 +26,6 @@ div.col-10{
   line-height: 1.33;
 }
 .btn-circle {
- 
   padding: 6px 0px;
   border-radius: 15px;
   text-align: center;
@@ -33,16 +33,15 @@ div.col-10{
   line-height: 1.42857;
   border: solid 1px lightseagreen;
   margin-left: auto;
-   width: 70px;
-     height: 70px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-  ;
+  width: 70px;
+  height: 70px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
-hr, h5{
+hr,
+h5 {
   padding-left: 33px;
-
 }
 
 .ng-untouched {

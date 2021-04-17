@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 //add module to manipulate forms
 import { FormsModule } from '@angular/forms';
 //add module to manipulate services
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,13 +11,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { PokemonslistComponent } from './components/pokemonslist/pokemonslist.component';
 //import guard to protect the sessions
-import {AuthGuard}  from './auth.guard';
-import {TokenInterceptorService} from './services/token-interceptor.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PokecardsComponent } from './components/pokecards/pokecards.component';
 import { PokemoneditComponent } from './components/pokemonedit/pokemonedit.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -27,16 +24,17 @@ import { PokemoneditComponent } from './components/pokemonedit/pokemonedit.compo
     PokemonslistComponent,
     PokecardsComponent,
     PokemoneditComponent,
-    
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   //add token-interceptor service to all requests
-  providers: [AuthGuard,
+  providers: [
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
-      multi: true
-    }],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
