@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,10 @@ import { Injectable } from '@angular/core';
 export class GetpokemonsService {
  
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
+  getPokemons(){
+    
+  }
   
 }
