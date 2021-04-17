@@ -10,30 +10,17 @@
         <!-- get all the trainers pokemons from database -->
         <div class="row">
             <div class="col-md-12 col-md-offset-2">
-              <div class="card">
+              <div class="card" *ngFor="let pokemon of trainerPokemons">
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-5">col-2</div>
-                    <div class="col-10">col-10</div>
-                    <div class="col-5">col-2</div>
+                    <div class="col-5">{{pokemon.level}}</div>
+                    <div class="col-10">{{pokemon.pokemonName}}</div>
+                    <div class="col-5">{{pokemon.type}}</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-md-offset-2">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5">col-2</div>
-                      <div class="col-10">col-10</div>
-                      <div class="col-5">col-2</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
+           
       
       <button (click)="HideForm()" [hidden]="!formVisibility"  type="button" class="btn btn-default btn-circle">
         Close 

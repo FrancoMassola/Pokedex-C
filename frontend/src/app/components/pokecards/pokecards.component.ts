@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SavepokemonsService } from '../../services/savepokemons.service';
+import { GetpokemonsService } from '../../services/getpokemons.service';
 
 @Component({
   selector: 'app-pokecards',
@@ -7,7 +8,10 @@ import { SavepokemonsService } from '../../services/savepokemons.service';
   styleUrls: ['./pokecards.component.css'],
 })
 export class PokecardsComponent implements OnInit {
-  constructor(private savepokemonsService: SavepokemonsService) {}
+  constructor(
+    private savepokemonsService: SavepokemonsService,
+    private getpokemonsService: GetpokemonsService
+  ) {}
 
   //initialize pokemon
   pokemon = {
@@ -17,9 +21,18 @@ export class PokecardsComponent implements OnInit {
     abilities: '',
   };
 
+  trainerPokemons = [];
+
   formVisibility = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getpokemonsService.getPokemons().subscribe(
+      (res) => {
+        this.trainerPokemons = res;
+      },
+      (err) => console.log(err)
+    );
+  }
 
   ShowForm() {
     this.formVisibility = true;
